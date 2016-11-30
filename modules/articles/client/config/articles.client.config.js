@@ -5,7 +5,7 @@ angular.module('articles').run(['Menus',
   function (Menus) {
     // Add the articles dropdown item
     Menus.addMenuItem('topbar', {
-      title: 'Find Tutors',
+      title: 'Find Candidates',
       state: 'articles',
       type: 'dropdown',
       roles: ['*']
@@ -13,15 +13,15 @@ angular.module('articles').run(['Menus',
 
     // Add the dropdown list item
     Menus.addSubMenuItem('topbar', 'articles', {
-      title: 'List Tutors',
+      title: 'List Candidates',
       state: 'articles.list'
     });
 
-    // Add the dropdown create item
-    Menus.addSubMenuItem('topbar', 'articles', {
-      title: 'Create your profile',
-      state: 'articles.create',
-      roles: ['user']
-    });
+    // // Add the dropdown create item
+    // Menus.addSubMenuItem('topbar', 'articles', {
+    //   title: 'Create Articles',
+    //   state: 'articles.create',
+    //   roles: ['user']
+    // });
   }
 ]);

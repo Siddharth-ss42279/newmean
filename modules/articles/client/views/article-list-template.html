@@ -1,13 +1,16 @@
-<div class="list-group bg">
+<div class="list-group">
     <div class = " col-xs-6 col-sm-4 extra-space" ng-repeat="article in articlesCtrl.articles |filter:searchText" >
       <a  ng-click="articlesCtrl.modalUpdate('lg', article)" class="list-group-item">
         <h4 class = "cust-list text-center">
           <i class ="glyphicon glyphicon-user " ng-class ="{'text-primary':article.reffered , 'text-danger':!article.reffered}"></i></h4>
         <div class="row">
           <div class="col-xs-10 col-xs-offset-1">
-        <h4>{{article.firstName}} {{article.lastName}}</h4>
+        <h4><strong>{{article.fname}} {{article.lname}}</strong></h4>
+        <div class="text-danger"></div>
+        
+        <h4></h4>
         <small class="list-group-item-text text-muted">
-          <span ng-bind="article.created | date:'mediumDate'"></span>
+          <!-- <span ng-bind="article.created | date:'mediumDate'"></span> -->
 
           <span class="pull-right">
             <button class ="btn btn-default" ng-click="articlesCtrl.remove(article)">
@@ -26,8 +29,8 @@
 
     </div>
 
+</div>
 
-
-  <div class="alert alert-warning text-center" ng-if="articles.$resolved && !articles.length">
+<div class="alert alert-warning text-center" ng-if="articles.$resolved && !articles.length">
     No articles yet, why don't you <a ui-sref="articles.create">create one</a>?
   </div>

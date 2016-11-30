@@ -10,218 +10,235 @@ var mongoose = require('mongoose'),
  * Article Schema
  */
 var ArticleSchema = new Schema({
-
-  list: {
+  //job descp
+  jobtitle: {
     type: String,
     default: '',
-
+    trim: true
   },
-  
-  firstName: {
+
+  locat: {
     type: String,
     default: '',
-    trim: true,
+    trim: true
   },
-
-  lastName: {
+  salary: {
     type: String,
     default: '',
-    trim: true,
+    trim: true
   },
-  reffered: {
-    type: Boolean,
+  contract: {
+    type: String,
     default: '',
-    trim: true,
+    trim: true
+  },
+  companybackground: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  role: {
+    type: String,
+    default: '',
+    trim: true
   },
 
-  male: {
-    type: Boolean,
-    default: '',
-    trim: true,
-  },
 
-  female: {
-    type: Boolean,
+//candidate 
+  fname: {
+    type: String,
     default: '',
-    trim: true,
+    trim: true
   },
-
+  lname: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  gender: {
+    type: String,
+    default: '',
+    trim: true
+  },
   age: {
-    type: String,
+    type: Number,
     default: '',
-    trim: true,
+    trim: true
   },
-
+  postalcode: {
+    type: Number,
+    default: '',
+    trim: true
+  },
   address: {
     type: String,
     default: '',
-    trim: true,
+    trim: true
   },
-
-  city: {
+  tnumber: {
     type: String,
     default: '',
-    trim: true,
+    trim: true
   },
-
-  country: {
-    type: String,
+  mnumber: {
+    type: Number,
     default: '',
-    trim: true,
+    trim: true
   },
-
-  postalCode: {
-    type: String,
-    default: '',
-    trim: true,
-  },
-
-  phone: {
-    type: String,
-    default: '',
-    trim: true,
-  },
-
   email: {
     type: String,
     default: '',
-    trim: true,
-  },
-
-  mon: {
-    type: Boolean,
-    default: '',
-    trim: true,
-  },
-  tue: {
-    type: Boolean,
-    default: '',
-    trim: true,
-  },
-  wed: {
-    type: Boolean,
-    default: '',
-    trim: true,
-  },
-  thu: {
-    type: Boolean,
-    default: '',
-    trim: true,
-  },
-  fri: {
-    type: Boolean,
-    default: '',
-    trim: true,
-  },
-  sat: {
-    type: Boolean,
-    default: '',
-    trim: true,
-  },
-  sund: {
-    type: Boolean,
-    default: '',
-    trim: true,
+    trim: true
   },
 
 
-  feeHourly: {
+  //candidate education
+  finalyear: {
+    type: Boolean,
+    default: '',
+    trim: true
+  },
+  undergraduate: {
+    type: Boolean,
+    default: '',
+    trim: true
+  },
+  tepassyear: {
+    type: Number,
+    default: '',
+    trim: true
+  },
+  tegrade: {
     type: String,
     default: '',
-    trim: true,
+    trim: true
   },
-
-  feeMonthly: {
+  twpassyear: {
+    type: Number,
+    default: '',
+    trim: true
+  },
+  twgrade: {
     type: String,
     default: '',
-    trim: true,
+    trim: true
   },
-
-  art: {
-    type: Boolean,
-    default: '',
-    trim: true,
-  },
-
-  math: {
-    type: Boolean,
-    default: '',
-    trim: true,
-  },
-
-  science: {
-    type: Boolean,
-    default: '',
-    trim: true,
-  },
-
-  social: {
-    type: Boolean,
-    default: '',
-    trim: true,
-  },
-
-  english: {
-    type: Boolean,
-    default: '',
-    trim: true,
-  },
-
-  economic: {
-    type: Boolean,
-    default: '',
-    trim: true,
-  },
-
-  account: {
-    type: Boolean,
-    default: '',
-    trim: true,
-  },
-
-  computer: {
-    type: Boolean,
-    default: '',
-    trim: true,
-  },
-
-
-  experience: {
+  anygap: {
     type: String,
     default: '',
-    trim: true,
+    trim: true
   },
 
-  aboutYou: {
+
+  //referal
+
+
+
+  reffname: {
     type: String,
     default: '',
-    trim: true,
+    trim: true
   },
-
-  areaofStudy: {
+  reflname: {
     type: String,
     default: '',
-    trim: true,
+    trim: true
   },
-
-  major: {
+  refcompany: {
     type: String,
     default: '',
-    trim: true,
+    trim: true
   },
-
-  institute: {
+  refdesignation: {
     type: String,
     default: '',
-    trim: true,
+    trim: true
+  },
+  refaddress: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  reftnumber: {
+    type: Number,
+    default: '',
+    trim: true
+  },
+  refrelation: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  refemail:{
+    type: String,
+    default: '',
+    trime: true
   },
 
+  //interview record
+  position: {
+    type: String,
+    default: '',
+    trim: true
+  },
   created: {
     type: Date,
     default: Date.now
   },
-  
+  stime: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  ftime: {
+    type: String,
+    default: '',
+    trim: true
+  },
 
+  //panel member
+  pfname: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  plname: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  pdepartment: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  pdesignation: {
+    type: String,
+    default: '',
+    trim: true
+  },
+
+  //interview  summary
+  natureofinterview: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  satisfyability: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  ratingscale: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  select: {
+    type: Boolean,
+    default: '',
+    trim: true
+  },
   user: {
     type: Schema.ObjectId,
     ref: 'User'

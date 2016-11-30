@@ -31,12 +31,26 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         ignoreState: true
       }
     })
+    .state('contactus', {
+      url: '/contactus',
+      templateUrl: 'modules/core/client/views/contactus.client.view.html'
+    })
+    .state('aboutus', {
+      url: '/aboutus',
+      templateUrl: 'modules/core/client/views/aboutus.client.view.html'
+    })
+    .state('team', {
+      url: '/team',
+      templateUrl: 'modules/core/client/views/team.client.view.html'
+    })
     .state('forbidden', {
       url: '/forbidden',
       templateUrl: 'modules/core/client/views/403.client.view.html',
       data: {
         ignoreState: true
       }
+
+
     });
   }
 ]);

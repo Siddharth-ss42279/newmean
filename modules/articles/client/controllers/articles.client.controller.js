@@ -4,15 +4,15 @@
 
 var articlesapp = angular.module('articles');
 
-articlesapp.controller('ArticlesController', ['$scope', '$stateParams', 'Authentication', 'Articles', '$modal', '$log', 
-  function ($scope, $stateParams, Authentication, Articles, $modal, $log) {
+articlesapp.controller('ArticlesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Articles', '$modal', '$log',
+  function ($scope, $stateParams, $location, Authentication, Articles, $modal, $log) {
 
     this.authentication = Authentication;
+
     // Find a list of Articles
-    
     this.articles = Articles.query();
 
-    //open model window to create single tutor
+      //open model window to create candidate form
     this.modalCreate = function (size) {
       var modalInstance = $modal.open({
         animation: $scope.animationsEnabled,
@@ -22,7 +22,7 @@ articlesapp.controller('ArticlesController', ['$scope', '$stateParams', 'Authent
 
           $scope.ok = function () {
             if(this.createProfile.$valid) {
-                $modalInstance.close();
+              $modalInstance.close();
             }
           };
 
@@ -30,7 +30,7 @@ articlesapp.controller('ArticlesController', ['$scope', '$stateParams', 'Authent
             $modalInstance.dismiss('cancel');
           };
         },
-        size: size
+        size: size,
         
       });
 
@@ -42,11 +42,7 @@ articlesapp.controller('ArticlesController', ['$scope', '$stateParams', 'Authent
     };
 
 
-
-
-
-
-    //open model window to update single tutor
+      //open model window to update single tutor
     this.modalUpdate = function (size,selectedArticle) {
       var modalInstance = $modal.open({
         animation: $scope.animationsEnabled,
@@ -57,7 +53,7 @@ articlesapp.controller('ArticlesController', ['$scope', '$stateParams', 'Authent
 
           $scope.ok = function () {
             if(this.updateProfile.$valid) {
-                $modalInstance.close($scope.article);
+              $modalInstance.close($scope.article);
             }
           };
 
@@ -78,6 +74,8 @@ articlesapp.controller('ArticlesController', ['$scope', '$stateParams', 'Authent
       }, function () {
         $log.info('Modal dismissed at: ' + new Date());
       });
+
+
     };
 
 
@@ -97,58 +95,60 @@ articlesapp.controller('ArticlesController', ['$scope', '$stateParams', 'Authent
         });
       }
     };
-
-    
   }
 ]);
-articlesapp.controller('ArticlesCreateController', ['$scope','Articles',
+
+articlesapp.controller('ArticlesCreateController', ['$scope', 'Articles',
   function ($scope, Articles) {
 
-        // Create new Article
-    this.create = function () {
-     
+    this.create = function (isValid) {
+      
 
-     
 
       // Create new Article object
       var article = new Articles({
-        list: this.list,
-        firstName: this.firstName,
-        lastName: this.lastName,
-        reffered: this.reffered,
-        male: this.male,
-        female: this.female,
+        jobtitle: this.jobtitle,
+        locat: this.locat,
+        salary: this.salary,
+        contract: this.contract,
+        companybackground: this.companybackground,
+        role: this.role,
+        fname: this.fname,
+        lname: this.lname,
+        gender: this.gender,
         age: this.age,
+        postalcode: this.postalcode,
         address: this.address,
-        city: this.city,
-        country: this.country,
-        postalCode: this.postalCode,
-        phone: this.phone,
+        tnumber: this.tnumber,
         email: this.email,
-        mon: this.mon,
-        tue: this.tue,
-        wed: this.wed,
-        thu: this.thu,
-        fri: this.fri,
-        sat: this.sat,
-        sund: this.sund,
-        feeHourly: this.feeHourly,
-        feeMonthly: this.feeMonthly,
-
-        art: this.art,
-        math: this.math,
-        science: this.science,
-        social: this.social,
-        english: this.english,
-        economic: this.economic,
-        account: this.account,
-        computer: this.computer,
-
-        experience: this.experience,
-        aboutYou: this.aboutYou,
-        areaofStudy: this.areaofStudy,
-        major: this.major,
-        institute: this.institute
+        mnumber: this.mnumber,
+        finalyear: this.finalayer,
+        undergraduate: this.undergraduate,
+        tepassyear: this.tepassyear,
+        tegrade: this.tegrade,
+        twpassyear: this.twpassyear,
+        twgrade: this.twgrade,
+        anygap: this.anygap,
+        reffname: this.reffname,
+        reflname: this.reflname,
+        refcompany: this.refcompany,
+        refdesignation: this.refdesignation,
+        refaddress: this.refaddress,
+        reftnumber: this.reftnumber,
+        refemail: this.refemail,
+        refrelation: this.refrelation,
+        position: this.position,
+        created: this.created,
+        stime: this.stime,
+        ftime: this.ftime,
+        pfname: this.pfname,
+        plname: this.plname,
+        pdepartment: this.pdepartment,
+        pdesignation: this.pdesignation,
+        natureofinterview: this.natureofinterview,
+        satisfyability: this.satisfyability,
+        ratingscale: this.ratingscale,
+        select: this.select   
 
       });
 
@@ -157,68 +157,60 @@ articlesapp.controller('ArticlesCreateController', ['$scope','Articles',
        
 
         // Clear form fields
-        $scope.firstName = '';
-        $scope.lastName= '';
-        $scope.reffered='';
-        $scope.male= '';
-        $scope.female= '';
-        $scope.age= '';
-        $scope.address= '';
-        $scope.city= '';
-        $scope.country= '';
-        $scope.postalCode= '';
-        $scope.phone= '';
-        $scope.email= '';
-        $scope.mon='';
-        $scope.tue='';
-        $scope.wed='';
-        $scope.thu='';
-        $scope.fri='';
-        $scope.sat='';
-        $scope.sund='';
-        $scope.avalability= '';
-        $scope.feeHourly= '';
-        $scope.feeMonthly= '';
-        $scope.art= '';
-        $scope.math= '';
-        $scope.science= '';
-        $scope.social= '';
-        $scope.english= '';
-        $scope.economic= '';
-        $scope.account= '';
-        $scope.computer= '';
-        $scope.experience= '';
-        $scope.aboutYou= '';
-        $scope.areaofStudy= '';
-        $scope.major= '';
-        $scope.institute= '';
-      
+        $scope.jobtitle = '';
+        $scope.locat = '';
+        $scope.salary = '';
+        $scope.contract = '';
+        $scope.companybackground = '';
+        $scope.role = '';
+        $scope.fname = '';
+        $scope.lname = '';
+        $scope.age = '';
+        $scope.gender = '';
+        $scope.address = '';
+        $scope.postalcode = '';
+        $scope.tnumber = '';
+        $scope.email = '';
+        $scope.mnumber = '';
+        $scope.finalyear = '';
+        $scope.undergraduate = '';
+        $scope.tepassyear = '';
+        $scope.tegrade = '';
+        $scope.twpassyear = '';
+        $scope.twgrade = '';
+        $scope.anygap = '';
+        $scope.reffname = '';
+        $scope.reflname = '';
+        $scope.refcompany = '';
+        $scope.refdesignation = '';
+        $scope.refaddress = '';
+        $scope.reftnumber = '';
+        $scope.refemail = '';
+        $scope.refrelation = '';
+        $scope.position = '';
+        $scope.created = '';
+        $scope.stime = '';
+        $scope.ftime = '';
+        $scope.pfname = '';
+        $scope.plname = '';
+        $scope.pdepartment = '';
+        $scope.pdesignation = '';
+        $scope.natureofinterview = '';
+        $scope.satisfyability = '';
+        $scope.ratingscale = '';
+        $scope.select = '';
+
+
+
       }, function (errorResponse) {
         $scope.error = errorResponse.data.message;
       });
     };
-
   }
 ]);
-articlesapp.controller('ArticlesUpdateController', ['$scope', 'Articles',
+
+articlesapp.controller('ArticlesUpdateController', ['$scope','Articles',
   function ($scope, Articles) {
-
-
-    $scope.ageoptions = [
-      {id:1, item:'17 - 20'},
-      {id:2, item:'21 - 24'},
-      {id:3, item:'25 - 28'},
-      {id:4, item:'29 - 32'},
-      {id:5, item:'33 - 36'},
-      {id:6, item:'above 36...'},
-    ];
-    //$scope.age = $scope.ageoptions[0];
-    
-
-
-
-
-
 
 
     // Update existing Article
@@ -235,12 +227,13 @@ articlesapp.controller('ArticlesUpdateController', ['$scope', 'Articles',
         $scope.error = errorResponse.data.message;
       });
     };
-
   }
 ]);
 
+
+
 articlesapp.directive('articleList', [function(){
-    return {
+  return {
     restrict: 'E',
     transclude: true,
     templateUrl: 'modules/articles/client/views/article-list-template.html',
@@ -252,7 +245,160 @@ articlesapp.directive('articleList', [function(){
 
     
 
+    // // Create new Article
+    // $scope.create = function (isValid) {
+    //   $scope.error = null;
 
+    //   if (!isValid) {
+    //     $scope.$broadcast('show-errors-check-validity', 'articleForm');
+
+    //     return false;
+    //   }
+
+    //   // Create new Article object
+    //   var article = new Articles({
+    //     jobtitle: this.jobtitle,
+    //     locat: this.locat,
+    //     salary: this.salary,
+    //     contract: this.contract,
+    //     companybackground: this.companybackground,
+    //     role: this.role,
+    //     fname: this.fname,
+    //     lname: this.lname,
+    //     gender: this.gender,
+    //     age: this.age,
+    //     postalcode: this.postalcode,
+    //     address: this.address,
+    //     tnumber: this.tnumber,
+    //     email: this.email,
+    //     mnumber: this.mnumber,
+    //     finalyear: this.finalayer,
+    //     undergraduate: this.undergraduate,
+    //     tepassyear: this.tepassyear,
+    //     tegrade: this.tegrade,
+    //     twpassyear: this.twpassyear,
+    //     twgrade: this.twgrade,
+    //     anygap: this.anygap,
+    //     reffname: this.reffname,
+    //     reflname: this.reflname,
+    //     refcompany: this.refcompany,
+    //     refdesignation: this.refdesignation,
+    //     refaddress: this.refaddress,
+    //     reftnumber: this.reftnumber,
+    //     refemail: this.refemail,
+    //     refrelation: this.refrelation,
+    //     position: this.position,
+    //     created: this.created,
+    //     stime: this.stime,
+    //     ftime: this.ftime,
+    //     pfname: this.pfname,
+    //     plname: this.plname,
+    //     pdepartment: this.pdepartment,
+    //     pdesignation: this.pdesignation,
+    //     natureofinterview: this.natureofinterview,
+    //     satisfyability: this.satisfyability,
+    //     ratingscale: this.ratingscale,
+    //     select: this.select   
+
+    //   });
+
+    //   // Redirect after save
+    //   article.$save(function (response) {
+    //     $location.path('articles/' + response._id);
+
+    //     // Clear form fields
+    //     $scope.jobtitle = '';
+    //     $scope.locat = '';
+    //     $scope.salary = '';
+    //     $scope.contract = '';
+    //     $scope.companybackground = '';
+    //     $scope.role = '';
+    //     $scope.fname = '';
+    //     $scope.lname = '';
+    //     $scope.age = '';
+    //     $scope.gender = '';
+    //     $scope.address = '';
+    //     $scope.postalcode = '';
+    //     $scope.tnumber = '';
+    //     $scope.email = '';
+    //     $scope.mnumber = '';
+    //     $scope.finalyear = '';
+    //     $scope.undergraduate = '';
+    //     $scope.tepassyear = '';
+    //     $scope.tegrade = '';
+    //     $scope.twpassyear = '';
+    //     $scope.twgrade = '';
+    //     $scope.anygap = '';
+    //     $scope.reffname = '';
+    //     $scope.reflname = '';
+    //     $scope.refcompany = '';
+    //     $scope.refdesignation = '';
+    //     $scope.refaddress = '';
+    //     $scope.reftnumber = '';
+    //     $scope.refemail = '';
+    //     $scope.refrelation = '';
+    //     $scope.position = '';
+    //     $scope.created = '';
+    //     $scope.stime = '';
+    //     $scope.ftime = '';
+    //     $scope.pfname = '';
+    //     $scope.plname = '';
+    //     $scope.pdepartment = '';
+    //     $scope.pdesignation = '';
+    //     $scope.natureofinterview = '';
+    //     $scope.satisfyability = '';
+    //     $scope.ratingscale = '';
+    //     $scope.select = '';
+
+
+
+    //   }, function (errorResponse) {
+    //     $scope.error = errorResponse.data.message;
+    //   });
+    // };
+
+    // // Remove existing Article
+    // $scope.remove = function (article) {
+    //   if (article) {
+    //     article.$remove();
+
+    //     for (var i in $scope.articles) {
+    //       if ($scope.articles[i] === article) {
+    //         $scope.articles.splice(i, 1);
+    //       }
+    //     }
+    //   } else {
+    //     $scope.article.$remove(function () {
+    //       $location.path('articles');
+    //     });
+    //   }
+    // };
+
+    // // Update existing Article
+    // $scope.update = function (isValid) {
+    //   $scope.error = null;
+
+    //   if (!isValid) {
+    //     $scope.$broadcast('show-errors-check-validity', 'articleForm');
+
+    //     return false;
+    //   }
+
+    //   var article = $scope.article;
+
+    //   article.$update(function () {
+    //     $location.path('articles/' + article._id);
+    //   }, function (errorResponse) {
+    //     $scope.error = errorResponse.data.message;
+    //   });
+    // };
 
     
+
+    // // Find existing Article
+    // $scope.findOne = function () {
+    //   $scope.article = Articles.get({
+    //     articleId: $stateParams.articleId
+    //   });
+    // };
 

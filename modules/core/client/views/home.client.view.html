@@ -1,84 +1,219 @@
-<section ng-controller="HomeController">
-  <div class="jumbotron text-center">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
-        <img alt="MEAN.JS" class="img-responsive text-center" src="modules/core/client/img/brand/logo.png" />
+<section ng-controller="HomeController" >
+<div ng-app >
+<div ng-controller="MainController" class="" ng-switch='slideshow' ng-animate="'animate'">
+  
+  
+  <div class="col-sm-12 col-xs-12" ng-switch-when='1'>
+          <img alt="MEAN.JS" class="" src="modules/core/client/img/loaders/slide2.jpg" height="350"
+      width="1150" /></div>
+        <div class="" ng-switch-when='2'>
+           <img alt="MEAN.JS" class="" src="modules/core/client/img/loaders/slipe1.jpg" height="350"
+      width="1150" /></div>
+        <div class="" ng-switch-when='3'>
+           <img alt="MEAN.JS" class="" src="modules/core/client/img/loaders/slide3.jpg" height="350"
+      width="1150" /></div>
+        <div class="slider-buttons">
+          <a ng-click='slideshow = 1'>
+            <div class="circle"></div>
+          </a>
+          <a ng-click='slideshow = 2'>
+            <div class="circle"></div>
+          </a>
+          <a ng-click='slideshow = 3'>
+            <div class="circle"></div>
+          </a>
+        </div>
+</div>
+  </div>
+
+
+
+
+
+
+
+
+
+ <!--   <div class="row ">
+    <div class="col-sm-12">
+      <img alt="MEAN.JS" class="" src="modules/core/client/img/brand/photo.jpg" height="350"
+      width="1150" />
+    </div>
+    
+  </div> 
+ -->
+
+<HR>
+
+  <div class="row back-image">
+    <div class="col-sm-6  ">
+
+      <div class="row" >
+        <h1>How does it work for Recruiters?.....</h1>
       </div>
-    </div>
-    <br>
-    <div class="row">
-      <p class="lead">
-        Open-Source Full-Stack Solution For MEAN Applications
+      <div class="row">
+        <p>Recruiters or various members of company simply search for candidates or browse to find a candidates appeared in the interviews. Once a Recruiters login with the particulars, He or She can start filling form regarding candidate information and their refferals.
+
+        Recuriter required to fill all the relevant information regarding interviewed candidate like edcation information, their referrals, skills, purpose of interview i.e technical or human resources......
       </p>
+        
+      </div>
+      
     </div>
-    <div class="row">
-      <p>
-        <a class="btn btn-primary btn-lg" href="http://meanjs.org" target="_blank">Learn more</a>
+    
+    <div class="col-sm-6">
+
+      <div class="row">
+        <h1>How does it work for Company?.....</h1>
+      </div>
+      <div class="row">
+        <p>
+        Any company officials can create their own personalized profile in which he or she can see the activity of their recuritment staff and about various interview conducted by their pannel members.Officials can search for the profile and interview conducted by their HR staff and all the panel members.
+
+        recuriters able to fill all the details like education, experience,  skillset, job description.....
       </p>
+      </div>
+      
     </div>
   </div>
-  <div>
-    <h2>Congrats! You've configured and run the sample application.</h2>
-    <p>MEAN.JS is a web application boilerplate, which means you should start changing everything :-)</p>
-    <p>This sample application tracks users and articles.</p>
-    <ul>
-      <li>
-        Click
-        <em>Sign Up</em> to get started.
-      </li>
-      <li>
-        Configure your app to work with your social accounts, by editing the
-        <em>/config/env/*.js</em> files.
-      </li>
-      <li>
-        Edit your users module.
-      </li>
-      <li>
-        Add new CRUD modules.
-      </li>
-      <li>
-        Have fun...
-      </li>
-    </ul>
+  <hr>
+
+    <div class="row">
+      <div class="col-sm-8 back-image col-xs-12" >
+        <div class="row">
+        <h1>How do Recruitit benifits Recruiters?.....</h1>
+      </div>
+      <div class="row">
+        <p>
+        This is entirely up to the Recruiters and their interviewed cnadidates. Recruitement options include face to face meetings or individualized instruction through online tools such as messaging or email.
+        Recruiters specifiy in their profile what kind of job they offers, This "GOGREEN" approach over the cloud will reduce paper work that is used by the recruiters earlier......
+              </p>
+      </div>
+
+      </div>
+      <div class="col-sm-4 col-xs-12">
+        <div class="col-sm-12"><img alt="MEAN.JS" class="" src="modules/core/client/img/loaders/gogreen.jpg" width="440" height="250"/>
+
+      </div>
+
+
+    </div>
+
+
+    
+
+
+
+
   </div>
+  <HR>
+
+
   <div class="row">
-    <div class="col-md-3">
-      <h2><strong>M</strong>ongoDB</h2>
-      <p><a target="_blank" href="http://mongodb.org/">MongoDB</a> is a NoSQL database. MongoDB's <a target="_blank" href="http://docs.mongodb.org/manual/">great manual</a> is the place to get started with NoSQL and MongoDB.</p>
+      <div class="col-sm-8 back-image col-xs-12" >
+        <div class="row">
+        <h1>What we provide you?.....</h1>
+      </div>
+      <div class="row">
+        <p>
+        In this web portal Recruiters simply choose the profile of interviewed candidates.
+        This portal is only for recuriters of particular company. one can register themselves as Recruiter in which you can manage the details of the candidates and their status of being selected.......
+      </p>
+      </div>
+
+      </div>
+      <div class="col-sm-4 col-xs-12">
+        <div class="row">
+         <h4> Recruiters can easily find details of candidates interviewed by them and information about panel members and the referrals of candidates and all the necessary information about candidate.......</h4>
+        </div>
+        <div class="col-sm-6"><img alt="MEAN.JS" class="" src="modules/core/client/img/loaders/logo.PNG" width="80%" height=""/></div>
+         <div class="col-sm-6">
+          <div><i class="glyphicon glyphicon-minus "></i>Job profile</div>
+          <div><i class="glyphicon glyphicon-minus "></i>Position offered</div>
+          <div><i class="glyphicon glyphicon-minus "></i>Candidate education </div>
+          <div><i class="glyphicon glyphicon-minus "></i>Reffrals of candidate</div>
+          <div><i class="glyphicon glyphicon-minus "></i>Pannel members</div>
+          <div><i class="glyphicon glyphicon-minus "></i>interview information</div>
+         </div>
+
+
+      </div>
+
+
     </div>
-    <div class="col-md-3">
-      <h2><strong>E</strong>xpress</h2>
-      <p><a target="_blank" href="http://expressjs.com/"> Express</a> is a NodeJS server-side application web framework. Check out <a target="_blank" href="http://expressjs.com/4x/api.html">The ExpressJS API reference for more information</a> or <a target="_blank" href="http://stackoverflow.com/questions/8144214/learning-express-for-node-js">StackOverflow</a> for more info.</p>
-    </div>
-    <div class="col-md-3">
-      <h2><strong>A</strong>ngularJS</h2>
-      <p><a target="_blank" href="http://angularjs.org/">AngularJS</a> is client-side web application framework. The <a target="_blank" href="http://www.thinkster.io/">Thinkster Popular Guide</a> and <a target="_blank" href="https://egghead.io/">Egghead Videos</a> are great resources.</p>
-    </div>
-    <div class="col-md-3">
-      <h2><strong>N</strong>ode.js</h2>
-      <p><a target="_blank" href="http://nodejs.org/">Node.js</a> is a JavaScript run-time, popular for being a web server platform. Node's website and this <a target="_blank" href="http://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js">stackOverflow thread</a> offer excellent starting points to get to grasps with node.</p>
-    </div>
+
+
+    
+
+
+
+
   </div>
-  <div class="well">
-    <h2>MEAN.JS Documentation</h2>
-    <p>
-      Once you're familiar with the foundation technology, check out the MEAN.JS Documentation:
-      <ul>
-        <li><a target="_blank" href="http://meanjs.org/docs.html">MEAN.JS Documentation</a>
-        </li>
-        <!-- <li><a target="_blank" href="http://meanjs.org/generator.html">Yeoman Generator</a>
-				</li> -->
-        <li><a target="_blank" href="http://meanjs.org/modules.html">Modules</a>
-        </li>
-        <li><a target="_blank" href="http://meanjs.org/changelog.html">Changelog</a>
-        </li>
-        <li><a target="_blank" href="http://meanjs.org/community.html">Community</a>
-        </li>
-        <li><a target="_blank" href="http://blog.meanjs.org">Blog</a>
-        </li>
-      </ul>
-    </p>
-  </div>
-  <br>Enjoy &amp; Keep Us Updated,
-  <br>The MEAN.JS Team.
+  <br>
+
+
+
+<br>
+
+
+  <hr size="100">
+
+
+
+
+
+  <footer>
+    <div class ="row back-image">
+      <div class="col-sm-4">
+        <i class="glyphicon glyphicon-option-vertical"></i>
+        <a href="aboutus">About RECRUITIT</a>
+
+      </div>
+      <div class="col-sm-4">
+        <i class="glyphicon glyphicon-option-vertical"></i>
+       <a href="contactus">Contact us</a>
+
+      </div>
+      <div class="col-sm-4">
+        <i class="glyphicon glyphicon-option-vertical"></i>
+        <a href="articles">Find a Candidate</a>(registered with RECRUTIT)
+
+      </div>
+
+
+    </div>
+
+    <div class ="row back-image">
+      <div class="col-sm-4">
+        <i class="glyphicon glyphicon-option-vertical"></i>
+        <a href="authentication/signin">Become a recruiter</a>
+        
+
+      </div>
+      <div class="col-sm-4">
+        <i class="glyphicon glyphicon-option-vertical"></i>
+        <a href="team">Team</a>
+
+      </div>
+      <br>
+      <br>
+    </div>
+
+
+
+
+  </footer>
+<br>
+<br> 
+
+
+
+
+
+
+
+
+
+
+
 </section>

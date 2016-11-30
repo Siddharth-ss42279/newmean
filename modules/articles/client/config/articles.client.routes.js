@@ -14,6 +14,5 @@ angular.module('articles').config(['$stateProvider',
         url: '',
         templateUrl: 'modules/articles/client/views/list-articles.client.view.html'
       });
-      
   }
 ]);

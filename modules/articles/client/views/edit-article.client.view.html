@@ -1,358 +1,361 @@
-<section ng-controller="ArticlesUpdateController as articleUpCtrl" >
+<section ng-controller="ArticlesUpdateController as articleUpCtrl">
   <div class="modal-header">
-            <h3 class="modal-title">UPDATE: {{article.firstName}} {{article.lastName}}</h3>
+            <h3 class="modal-title">UPDATE: {{article.fname}} {{article.lname}}</h3>
         </div>
+
         <div class="modal-body">
+          <div class="col-md-12">
+            <form name="updateProfile" >
+              <fieldset>
+<div class ="row">
+  <h1>JOB PROFILE</h1>
+</div>         
+        <div class="row">
+          <div class="col-sm-6 text-center">
+            <i class="glyphicon glyphicon-dashboard cust-profile" ng-class="{'text-primary': article.select, 'text-danger':!article.select}"></i>
 
-    <form name="updateProfile" >
-      <fieldset>
-
-        <div class = "row">
-          <div class = "col-sm-6 ">
-            <i class= "glyphicon glyphicon-user cust-profile  text-center" ng-class ="{'text-primary':article.reffered , 'text-danger':!article.reffered}"></i>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group" show-errors>
+              <label for="jobtitle">TITLE OF JOB</label>
+              <input name="jobtitle" type="text" ng-model="article.jobtitle" id="jobtitle" class="form-control"  ng-required="required">
+          
+            </div> 
 
             <div class="form-group" show-errors>
+              <label for="locat">LOCATION</label>
+              <input name="locat" type="text" ng-model="article.locat" id="locat" class="form-control"  ng-required="required">
+          
+            </div> 
 
-              <label for="reffered" >Reffered</label>
-              <input name="reffered" type="checkbox" ng-model="article.reffered" id="reffered" class="form-control check-box"  >
+            <div class="form-group" show-errors>
+              <label for="salary">SALARY</label>
+              <input name="salary" type="text" ng-model="article.salary" id="salary" class="form-control"  ng-required="required">
+          
+            </div> 
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group" show-errors>
+              <label for="contract">CONTRACT(IF ANY)</label>
+              <input name="contract" type="text" ng-model="article.contract" id="contract" class="form-control"  ng-required="required">
+          
+            </div>
+
+            <div class="form-group" show-errors>
+              <label for="companybackground">COMPANY BACKGROUND</label>
+              <input name="companybackground" type="text" ng-model="article.companybackground" id="companybackground" class="form-control"  ng-required="required">
+          
+            </div>  
+
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group" show-errors>
+              <label for="role">JOB ROLE</label>
+              <input name="role" type="text" ng-model="article.role" id="role" class="form-control"  ng-required="required">
+          
+            </div> 
+          </div>
+
+        </div>
+<hr>
+
+
+
+<br>
+<br>
+<br>
+
+<div class ="row">
+  <h1>CANDIDATE INFORMATION</h1>
+</div>
+
+
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group" show-errors>
+              <label for="fname">FIRST NAME</label>
+              <input name="fname" type="text" ng-model="article.fname" id="fname" class="form-control"  ng-required="required">
+          
+            </div> 
+
+            <div class="form-group" show-errors>
+              <label for="lname">LAST NAME</label>
+              <input name="lname" type="text" ng-model="article.lname" id="lname" class="form-control"  ng-required="required">
+          
+            </div> 
+
+            <div class="form-group" show-errors>
+              <label for="gender">GENDER</label>
+              <input name="gender" type="text" ng-model="article.gender" id="gender" class="form-control"  ng-required="required">
+          
+            </div> 
+
+            <div class="form-group" show-errors>
+              <label for="age">AGE</label>
+              <input name="age" type="text" ng-model="article.age" id="age" class="form-control"  ng-required="required">
+          
+            </div> 
+
+            <div class="form-group" show-errors>
+              <label for="email">EMAIL</label>
+              <input name="email" type="text" ng-model="article.email" id="email" class="form-control"  ng-required="required">
+          
+            </div> 
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group" show-errors>
+              <label for="postalcode">POSTALCODE</label>
+              <input name="postalcode" type="text" ng-model="article.postalcode" id="postalcode" class="form-control"  ng-required="required">
+          
+            </div> 
+            <div class="form-group" show-errors>
+              <label for="address">ADDRESS</label>
+              <input name="address" type="text" ng-model="article.address" id="address" class="form-control"  ng-required="required">
+          
+            </div> 
+            <div class="form-group" show-errors>
+              <label for="mnumber">MOBILE NUMBER</label>
+              <input name="mnumber" type="text" ng-model="article.mnumber" id="mnumber" class="form-control"  ng-required="required">
+          
+            </div> 
+            <div class="form-group" show-errors>
+              <label for="tnumber">TELEPHONE / LANDLINE NUMBER</label>
+              <input name="tnumber" type="text" ng-model="article.tnumber" id="tnumber" class="form-control"  ng-required="required">
+          
+            </div> 
+          </div>
+
+        </div>
+        <hr>
+<br>
+<br>
+<br>
+<div class= "row">
+  <h1>REFERAL</h1>
+
+</div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group" show-errors>
+              <label for="reffname">REF-FIRSTNAME</label>
+              <input name="reffname" type="text" ng-model="article.reffname" id="reffname" class="form-control"  ng-required="required">
+          
+            </div>
+
+            <div class="form-group" show-errors>
+              <label for="reflname">REF-LASTNAME</label>
+              <input name="reflname" type="text" ng-model="article.reflname" id="reflname" class="form-control"  ng-required="required">
+          
+            </div>
+
+            <div class="form-group" show-errors>
+              <label for="refcompany">REF-COMPANY</label>
+              <input name="refcompany" type="text" ng-model="article.refcompany" id="refcompany" class="form-control"  ng-required="required">
+          
+            </div>
+
+            <div class="form-group" show-errors>
+              <label for="refdesignation">REF-DESIGNATION</label>
+              <input name="refdesignation" type="text" ng-model="article.refdesignation" id="refdesignation" class="form-control"  ng-required="required">
           
             </div>
 
           </div>
-          <div class = "col-sm-6">
+
+
+
+
+          <div class="col-sm-6">
             <div class="form-group" show-errors>
-              <label for="firstName">First name</label>
-              <input name="firstName" type="text" ng-model="article.firstName" id="firstName" class="form-control"  >
+              <label for="reftnumber">REF-TELEPHONE / LANDLINE NUMBER</label>
+              <input name="reftnumber" type="text" ng-model="article.reftnumber" id="reftnumber" class="form-control"  ng-required="required">
+          
+            </div>
+
+            <div class="form-group" show-errors>
+              <label for="refrelation">REF-RELATION WITH CANDIDATE</label>
+              <input name="refrelation" type="text" ng-model="article.refrelation" id="refrelation" class="form-control"  ng-required="required">
           
             </div>
             <div class="form-group" show-errors>
-              <label for="lastName">Last name</label>
-              <input name="lastName" type="text" ng-model="article.lastName" id="lastame" class="form-control"  required>
+              <label for="refemail">REF-EMAIL</label>
+              <input name="refemail" type="text" ng-model="article.refemail" id="refemail" class="form-control"  ng-required="required">
           
             </div>
             <div class="form-group" show-errors>
-              <label for="male">Male</label><br>
-              
-                <input type="radio" name="male" ng-modal= "article.male" id= "female"  class= "form-control check-box" > 
-              </div>
+              <label for="refaddress">REF ADDRESS</label>
+              <input name="refaddress" type="text" ng-model="article.refaddress" id="refaddress" class="form-control"  ng-required="required">
+          
+            </div>
 
-             
 
-              <div class="form-group" show-errors>
-              <label for="female">Female</label><br>
-                <input type="radio" ng-modal="article.female" id ="female" name="female"  class = "form-control check-box" > 
-              </div>
-              
-            
-            
+
+
+          </div>
+
+        </div>
+<hr>
+
+<br>
+<br>
+<br>
+<div class ="row">
+  <h1>RECORD OF INTERVIEW</h1>
+</div>  
+
+
+        <div class="row">
+          <div class="col-sm-6 text-center">
+            <i class="glyphicon glyphicon-th-list cust-profile"></i>
+          </div>
+
+          <div class="col-sm-6">
             <div class="form-group" show-errors>
-             
-                <label for="age">Age</label>
+              <label for="position">POSITION</label>
+              <input name="position" type="text" ng-model="article.position" id="position" class="form-control"  ng-required="required">
+          
+            </div> 
 
-                <select ng-model="article.age" ng-options="ageitem.item for ageitem in ageoptions" class = "form-control" >
-                  <option value="">-- choose age --</option>
-                </select>
+            <div class="form-group" show-errors>
+              <label for="created">DATE</label>
+              <input name="created" type="text" ng-model="article.created" id="created" class="form-control"  ng-required="required">
+          
+            </div> 
+
+            <div class="form-group" show-errors>
+              <label for="stime">START TIME OF INTERVIEW</label>
+              <input name="stime" type="text" ng-model="article.stime" id="stime" class="form-control"  ng-required="required">
+          
+            </div> 
+            <div class="form-group" show-errors>
+              <label for="ftime">FINISH TIME OF INTERVIEW</label>
+              <input name="ftime" type="text" ng-model="article.ftime" id="ftime" class="form-control"  ng-required="required">
+          
+            </div> 
+
+            <div class="form-group" show-errors>
+              <label for="singleSelect"> RATING SCALE FOR CANDIDATE </label><br>
+              <select name="singleSelect" ng-model="article.ratingscale" >
+                <option value="Below Average">Below Average...</option>
+                <option value="Average">Average...</option>
+                <option value="Above Average">Above Average...</option>
+                <option value="Good">Good...</option>
+                <option value="Excelent">Excelent...</option>
+              </select>    
                 
+
             </div> 
+          </div>
 
-           </div>
+
+
         </div>
-        <hr>
-        <div class = "row">
-          <label class ="col-sm-12"><h1>Contact Information</h1></label>
-          <div class = "col-sm-6">
 
+        <div class="row">
+          <div class="col-sm-6">
             <div class="form-group" show-errors>
-              <label for="address">Address</label>
-              <textarea name="address" type="text" ng-model="article.address" id="address" class="form-control"  >
-              </textarea>
+              <label for="natureofinterview">NATURE OF INTERVIEW</label>
+              <input name="natureofinterview" type="text" ng-model="article.natureofinterview" id="natureofinterview" class="form-control"  ng-required="required">
           
             </div>
 
-            <div class="form-group" show-errors>
-              <label for="city">City</label>
-              <input name="city" type="text" ng-model="article.city" id="city" class="form-control"  >
-          
-            </div>
-
-            <div class="form-group" show-errors>
-              <label for="country">Country</label>
-              <input name="country" type="text" ng-model="article.country" id="country" class="form-control"  >
-          
-            </div>
-
-
+            
 
           </div>
-          <div class = "col-sm-6 ">
-
+          <div class="col-sm-6">
             <div class="form-group" show-errors>
-              <label for="postalCode">PostalCode/ ZipCode</label>
-              <input name="postalCode" type="text" ng-model="article.postalCode" id="postalCode" class="form-control"  >
+              <label for="select">FINAL SELECTION</label>
+              <input name="select" type="checkbox" ng-model="article.select" id="select" class="form-control check-box"  ng-required="required">
           
             </div>
-            <br>
-            <div class="form-group" show-errors>
-              <label for="phone">Phone</label>
-              <input name="phone" type="text" ng-model="article.phone" id="phone" class="form-control"  >
-          
-            </div>
-
-            <div class="form-group" show-errors>
-              <label for="email">Email</label>
-              <input name="email" type="text" ng-model="article.email" id="email" class="form-control"  >
-          
-            </div>
-
           </div>
 
         </div>
-         <hr>
-        <div class = "row">
-          <label class = "col-sm-12"><h1>Avalability</h1></label>
-          <div class = "col-sm-6 ">
-
-            <div class="form-group" show-errors>
-             
-              <label for="mon">Monday</label>
-              <input name="mon" type="checkbox" ng-model="article.mon" id="mon" class="form-control check-box"  >
-            
-            </div>
-
-            
-
-            <div class="form-group" show-errors>
-
-              <label for="wed">Wednesday</label>
-              <input name="wed" type="checkbox" ng-model="article.wed" id="wed" class="form-control check-box"  >
-          
-            </div>
-
-            
-            <div class="form-group" show-errors>
-
-              <label for="fri">Friday</label>
-              <input name="fri" type="checkbox" ng-model="article.fri" id="fri" class="form-control check-box"  >
-          
-            </div>
-
-            
-            <div class="form-group" show-errors>
-
-              <label for="sund">Sunday</label>
-              <input name="sund" type="checkbox" ng-model="article.sund" id="sund" class="form-control check-box"  >
-          
-            </div>
-            
-
+<hr>
+<br>
+<br>
+<br>
+<div class ="row">
+  <h1>INTERVIEWER</h1>
+</div> 
+        <div class="row">
+          <div class="col-sm-6 text-center">
+            <i class="glyphicon glyphicon-user cust-profile"></i>
           </div>
-          <div class = "col-sm-6 ">
+          <div class="col-sm-6">
             <div class="form-group" show-errors>
-
-              <label for="tue">Tuesday</label>
-              <input name="tue" type="checkbox" ng-model="article.tue" id="tue" class="form-control check-box"  >
+              <label for="pfname">FIRST NAME</label>
+              <input name="pfname" type="text" ng-model="article.pfname" id="pfname" class="form-control"  ng-required="required">
           
-            </div>
-            <div class="form-group" show-errors>
-
-              <label for="thu">Thursday</label>
-              <input name="thu" type="checkbox" ng-model="article.thu" id="thu" class="form-control check-box"  >
-          
-            </div>
-            <div class="form-group" show-errors>
-
-              <label for="sat">Saturday</label>
-              <input name="sat" type="checkbox" ng-model="article.sat" id="sat" class="form-control check-box"  >
-          
-            </div>
-
-            
-
-          </div>
-
-        </div>
-        <hr>
-        <div class = "row">
-         <label class="col-sm-12"><h1>Expected fee structure</h1></label>
-          <div class = "col-sm-6">
-            <div class="form-group" show-errors>
-              <label for="feeHourly">FeeHourly</label>
-              <input name="feeHourly" type="text" ng-model="article.feeHourly" id="feeHourly" class="form-control"  >
-          
-            </div>
-
-          </div>
-          <div class = "col-sm-6">
-            <div class="form-group" show-errors>
-              <label for="feeMonthly">FeeMonthly</label>
-              <input name="feeMonthly" type="text" ng-model="article.feeMonthly" id="feeMonthly" class="form-control"  >
-          
-            </div>
-
-          </div>
-
-        </div>
-        <hr>
-        <div class = "row">
-          <label class = "col-sm-12"><h1>Subjects</h1></label>
-          <div class = "col-sm-3">
-            <div class="form-group" show-errors>
-
-              <label for="art">Arts</label>
-              <input name="art" type="checkbox" ng-model="article.art" id="art" class="form-control check-box"  >
-          
-            </div>
-            <div class="form-group" show-errors>
-
-              <label for="math">Maths</label>
-              <input name="math" type="checkbox" ng-model="article.math" id="math" class="form-control check-box"  >
-          
-            </div>
-
-
-
-          </div>
-          <div class = "col-sm-3">
-            <div class="form-group" show-errors>
-
-              <label for="science">Science</label>
-              <input name="science" type="checkbox" ng-model="article.science" id="science" class="form-control check-box"  >
-          
-            </div>
-            <div class="form-group" show-errors>
-
-              <label for="social">Social</label>
-              <input name="social" type="checkbox" ng-model="article.social" id="social" class="form-control check-box"  >
-          
-            </div>
-
-
-          </div>
-          <div class = "col-sm-3">
-            <div class="form-group" show-errors>
-
-              <label for="english">English</label>
-              <input name="english" type="checkbox" ng-model="article.english" id="english" class="form-control check-box"  >
-          
-            </div>
-            <div class="form-group" show-errors>
-
-              <label for="economic">Economics</label>
-              <input name="econimic" type="checkbox" ng-model="article.economic" id="economic" class="form-control check-box"  >
-          
-            </div>
-
-
-          </div>
-          <div class = "col-sm-3">
-            <div class="form-group" show-errors>
-
-              <label for="account">Accounts</label>
-              <input name="account" type="checkbox" ng-model="article.account" id="account" class="form-control check-box"  >
-          
-            </div>
-            <div class="form-group" show-errors>
-
-              <label for="computer">Computers</label>
-              <input name="computer" type="checkbox" ng-model="article.computer" id="computer" class="form-control check-box"  >
-          
-            </div>
-
-
-          </div>
-
-        </div>
-        <hr>
-        <div class = "row">
-          <label class= "col-sm-12"><h1>Experience / current status</h1> </label>
-          <div class = "col-sm-6">
-            <div class="form-group" show-errors>
-             
-                <label for="age">Exp. years</label>
-                <br>
-                <input list="age" name="age" ng-modal= "article.age">
-                <datalist id="age">
-                 <option value="beginner">
-                 <option value="1-2">
-                 <option value="1-3">
-                 <option value="1 5">
-                 <option value="above 5">
-                </datalist>
-                <br>
-                <br>
-
-
             </div> 
 
             <div class="form-group" show-errors>
-              <label for="areaofStudy">Area of intrest</label>
-              <input name="areaofStudy" type="text" ng-model="article.areaofStudy" id="areaofStudy" class="form-control"  >
-              </input>
+              <label for="plname">LAST NAME</label>
+              <input name="plname" type="text" ng-model="article.plname" id="plname" class="form-control"  ng-required="required">
           
-            </div>
-            <div class="form-group" show-errors>
-              <label for="institute">Institute </label>
-              <input name="institute" type="text" ng-model="article.institute" id="institute" class="form-control"  >
-              </input>
-          
-            </div>
+            </div> 
 
+            <div class="form-group" show-errors>
+              <label for="pdesignation">DESIGNATION IN COMPANY</label>
+              <input name="pdesignation" type="text" ng-model="article.pdesignation" id="pdesignation" class="form-control"  ng-required="required">
+          
+            </div> 
+            <div class="form-group" show-errors>
+              <label for="pdepartment">DEPARTMENT</label>
+              <input name="pdepartment" type="text" ng-model="article.pdepartment" id="pdepartment" class="form-control"  ng-required="required">
+          
+            </div>
           </div>
-          <div class = "col-sm-6">
-            <div class="form-group" show-errors>
-              <label for="aboutYou">Bio</label>
-              <textarea name="aboutYou" type="text" ng-model="article.aboutYou" id="aboutYou" class="form-control"  >
-              </textarea>
-          
-            </div>
-            <div class="form-group" show-errors>
-              <label for="major">Major</label>
-              <input name="major" type="text" ng-model="article.major" id="major" class="form-control"  >
-              </input>
-          
-            </div>
-            
-
-          </div>
-
         </div>
-        <hr>
-        <div class = "row">
-          <div class = "col-sm-6">
 
-          </div>
-          <div class = "col-sm-6">
-
-          </div>
-
-        </div>
+<br>
         
-        <div class = "row">
-          <div class = "col-sm-6">
-
-          </div>
-          <div class = "col-sm-6">
-
-          </div>
-
-        </div>
+      
 
 
 
 
 
-
-
-        
         
         <div ng-show="error" class="text-danger">
           <strong ng-bind="error"></strong>
         </div>
       </fieldset>
-    </form>
+            </form>
+          </div>
 
+    
             
         </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <div class="modal-footer">
             <button class="btn btn-success btn-lg" ng-click="articleUpCtrl.update(article); ok()" ng-disabled="updateProfile.$invalid" >Update & Close</button>
             <button class="btn btn-warning btn-lg" ng-click="cancel() ">Cancel</button>
@@ -361,9 +364,6 @@
 
 
 
-
-
-        <div ng-show="error" class="text-danger">
-          <strong ng-bind="error"></strong>
-        </div>
+  
+  
 </section>

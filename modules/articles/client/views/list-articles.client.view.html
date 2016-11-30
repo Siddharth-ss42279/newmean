@@ -1,7 +1,6 @@
-<section ng-controller="ArticlesController as articlesCtrl" >
-
+<section ng-controller="ArticlesController as articlesCtrl">
   <div class="page-header">
-    <h1>TUTOR</h1>
+    <h1>LIST OF CANDIDATES</h1>
   </div>
 
   <div class="row">
@@ -14,9 +13,9 @@
     </div>
   </div>
   <div class ="col-xs-12 col-sm-4 text-center">
-    <button type ="button" class="btn btn-success text-center" ng-click="articlesCtrl.modalCreate('lg', article)">
+    <button type ="button" class="btn btn-success text-center" ng-click="articlesCtrl.modalCreate('lg')">
       <i class ="glyphicon glyphicon-user "></i><br>
-      NEW TUTOR
+      NEW CANDIDATE
 
     </button>
   </div>
@@ -25,7 +24,7 @@
 <br>
 <br>
 
-<article-list></article-list>
+<div class="row"><article-list></article-list></div>
 
 
   
